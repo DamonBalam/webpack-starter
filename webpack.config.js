@@ -12,9 +12,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
@@ -55,6 +53,8 @@ module.exports = {
       filename: '[name].css',
       ignoreOrder: false,
     }),
-    new CopyPlugin([{ from: 'src/assets', to: 'assets' }]),
+    new CopyPlugin({
+      patterns: [{ from: 'src/assets', to: 'assets' }],
+    }),
   ],
 };
